@@ -10,42 +10,7 @@
                 "eventCode": 12345,
                 "activationTimestamp": 1607352997664,
                 "recoveryTiemstamp": 1607352997664,
-                "LOG_CLASS": {
-                    "timestampList": [
-                        -200,
-                        -100,
-                        0,
-                        100,
-                        200
-                    ],
-                    "signalList": [
-                        {
-                            "LOG_CLASS_SIGNAL_OBJECT": {
-                                "signalId": 123456,
-                                "signalValue": [
-                                    1,
-                                    1,
-                                    0,
-                                    0,
-                                    0
-                                ]
-                            }
-                        },
-                        {
-                            "LOG_CLASS_SIGNAL_OBJECT": {
-                                "signalId": 123457,
-                                "signalValue": [
-                                    20,
-                                    20,
-                                    20,
-                                    20,
-                                    20
-                                ]
-                            }
-                        }
-                    ]
                 }
-            }
         }
     ],
     "required": [
