@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://example.com/example.json",
+    "$id": "https://raw.githubusercontent.com/edwardmbsmith/obs-wayside-icd/main/REAL_TIME_EVENT.json",
     "type": "object",
-    "title": "The root schema",
-    "description": "The root schema comprises the entire JSON document.",
+    "title": "The real time event schema",
+    "description": "Schema for the REAL_TIME_EVENT message sent in '{trainId}/reak-time/event'.",
     "default": {},
     "examples": [
         {
