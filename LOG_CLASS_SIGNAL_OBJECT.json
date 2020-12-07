@@ -1,1 +1,91 @@
-
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/edwardmbsmith/obs-wayside-icd/main/LOG_CLASS_SIGNAL_OBJECT.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "LOG_CLASS_SIGNAL_OBJECT": {
+                "signalId": "123456",
+                "signalValue": [
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        }
+    ],
+    "required": [
+        "LOG_CLASS_SIGNAL_OBJECT"
+    ],
+    "properties": {
+        "LOG_CLASS_SIGNAL_OBJECT": {
+            "$id": "#/properties/LOG_CLASS_SIGNAL_OBJECT",
+            "type": "object",
+            "title": "The LOG_CLASS_SIGNAL_OBJECT schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "signalId": "123456",
+                    "signalValue": [
+                        1,
+                        1,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "required": [
+                "signalId",
+                "signalValue"
+            ],
+            "properties": {
+                "signalId": {
+                    "$id": "#/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalId",
+                    "type": "string",
+                    "title": "The signalId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "123456"
+                    ]
+                },
+                "signalValue": {
+                    "$id": "#/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalValue",
+                    "type": "array",
+                    "title": "The signalValue schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            1,
+                            1
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalValue/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalValue/items/anyOf/0",
+                                "type": "number",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1,
+                                    0
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
