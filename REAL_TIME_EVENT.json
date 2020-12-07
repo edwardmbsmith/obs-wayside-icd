@@ -1,17 +1,15 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/edwardmbsmith/obs-wayside-icd/main/REAL_TIME_EVENT.json",
-    "type": "object",
-    "title": "The real time event schema",
-    "description": "Schema for the REAL_TIME_EVENT message sent in '{trainId}/reak-time/event'.",
+    "$schema": "http://json-schema.org/draft-06/schema",
     "default": {},
+    "description": "The root schema comprises the entire JSON document.",
     "examples": [
         {
             "REAL_TIME_EVENT": {
-                "ts": "123456798",
+                "ts": 1607352997664,
                 "eventCode": 12345,
-                "activationTimestamp": 123456789,
-                "recoveryTiemstamp": 123456789,
+                "activationTimestamp": 1607352997664,
+                "recoveryTiemstamp": 1607352997664,
                 "LOG_CLASS": {
                     "timestampList": [
                         -200,
@@ -23,7 +21,7 @@
                     "signalList": [
                         {
                             "LOG_CLASS_SIGNAL_OBJECT": {
-                                "signalId": "123456",
+                                "signalId": 123456,
                                 "signalValue": [
                                     1,
                                     1,
@@ -35,7 +33,7 @@
                         },
                         {
                             "LOG_CLASS_SIGNAL_OBJECT": {
-                                "signalId": "123457",
+                                "signalId": 123457,
                                 "signalValue": [
                                     20,
                                     20,
@@ -53,16 +51,16 @@
     "required": [
         "REAL_TIME_EVENT"
     ],
+    "title": "REAL_TIME_EVENT",
+    "type": "object",
     "properties": {
         "REAL_TIME_EVENT": {
             "$id": "#/properties/REAL_TIME_EVENT",
-            "type": "object",
-            "title": "The REAL_TIME_EVENT schema",
-            "description": "An explanation about the purpose of this instance.",
             "default": {},
+            "description": "An explanation about the purpose of this instance.",
             "examples": [
                 {
-                    "ts": "123456798",
+                    "ts": 1607352997664,
                     "eventCode": 12345,
                     "activationTimestamp": 123456789,
                     "recoveryTiemstamp": 123456789,
@@ -77,7 +75,7 @@
                         "signalList": [
                             {
                                 "LOG_CLASS_SIGNAL_OBJECT": {
-                                    "signalId": "123456",
+                                    "signalId": 123456,
                                     "signalValue": [
                                         1,
                                         1,
@@ -89,7 +87,7 @@
                             },
                             {
                                 "LOG_CLASS_SIGNAL_OBJECT": {
-                                    "signalId": "123457",
+                                    "signalId": 123457,
                                     "signalValue": [
                                         20,
                                         20,
@@ -106,269 +104,55 @@
             "required": [
                 "ts",
                 "eventCode",
-                "activationTimestamp",
-                "recoveryTiemstamp",
-                "LOG_CLASS"
+                "activationTimestamp"
             ],
+            "title": "The root of the real time event message",
+            "type": "object",
             "properties": {
                 "ts": {
                     "$id": "#/properties/REAL_TIME_EVENT/properties/ts",
-                    "type": "string",
-                    "title": "The ts schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
+                    "default": 0,
+                    "description": "Timestamp, in milliseconds since epoch",
                     "examples": [
-                        "123456798"
-                    ]
+                        1607352997664
+                    ],
+                    "required": [],
+                    "title": "timestamp",
+                    "type": "string"
                 },
                 "eventCode": {
                     "$id": "#/properties/REAL_TIME_EVENT/properties/eventCode",
-                    "type": "integer",
-                    "title": "The eventCode schema",
-                    "description": "An explanation about the purpose of this instance.",
                     "default": 0,
+                    "description": "Unique event code generated in train data dictionary",
                     "examples": [
                         12345
-                    ]
+                    ],
+                    "title": "Event Code",
+                    "type": "integer"
                 },
                 "activationTimestamp": {
                     "$id": "#/properties/REAL_TIME_EVENT/properties/activationTimestamp",
-                    "type": "integer",
-                    "title": "The activationTimestamp schema",
-                    "description": "An explanation about the purpose of this instance.",
                     "default": 0,
+                    "description": "Timestamp, in milliseconds since epoch",
                     "examples": [
                         123456789
-                    ]
+                    ],
+                    "title": "Activation Timestamp",
+                    "type": "integer"
                 },
                 "recoveryTiemstamp": {
                     "$id": "#/properties/REAL_TIME_EVENT/properties/recoveryTiemstamp",
-                    "type": "integer",
-                    "title": "The recoveryTiemstamp schema",
-                    "description": "An explanation about the purpose of this instance.",
                     "default": 0,
+                    "description": "Timestamp, in milliseconds since epoch",
                     "examples": [
                         123456789
-                    ]
-                },
-                "LOG_CLASS": {
-                    "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS",
-                    "type": "object",
-                    "title": "The LOG_CLASS schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "examples": [
-                        {
-                            "timestampList": [
-                                -200,
-                                -100,
-                                0,
-                                100,
-                                200
-                            ],
-                            "signalList": [
-                                {
-                                    "LOG_CLASS_SIGNAL_OBJECT": {
-                                        "signalId": "123456",
-                                        "signalValue": [
-                                            1,
-                                            1,
-                                            0,
-                                            0,
-                                            0
-                                        ]
-                                    }
-                                },
-                                {
-                                    "LOG_CLASS_SIGNAL_OBJECT": {
-                                        "signalId": "123457",
-                                        "signalValue": [
-                                            20,
-                                            20,
-                                            20,
-                                            20,
-                                            20
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
                     ],
-                    "required": [
-                        "timestampList",
-                        "signalList"
-                    ],
-                    "properties": {
-                        "timestampList": {
-                            "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/timestampList",
-                            "type": "array",
-                            "title": "The timestampList schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": [],
-                            "examples": [
-                                [
-                                    -200,
-                                    -100
-                                ]
-                            ],
-                            "additionalItems": true,
-                            "items": {
-                                "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/timestampList/items",
-                                "anyOf": [
-                                    {
-                                        "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/timestampList/items/anyOf/0",
-                                        "type": "integer",
-                                        "title": "The first anyOf schema",
-                                        "description": "An explanation about the purpose of this instance.",
-                                        "default": 0,
-                                        "examples": [
-                                            -200,
-                                            -100
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        "signalList": {
-                            "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList",
-                            "type": "array",
-                            "title": "The signalList schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": [],
-                            "examples": [
-                                [
-                                    {
-                                        "LOG_CLASS_SIGNAL_OBJECT": {
-                                            "signalId": "123456",
-                                            "signalValue": [
-                                                1,
-                                                1,
-                                                0,
-                                                0,
-                                                0
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "LOG_CLASS_SIGNAL_OBJECT": {
-                                            "signalId": "123457",
-                                            "signalValue": [
-                                                20,
-                                                20,
-                                                20,
-                                                20,
-                                                20
-                                            ]
-                                        }
-                                    }
-                                ]
-                            ],
-                            "additionalItems": true,
-                            "items": {
-                                "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items",
-                                "anyOf": [
-                                    {
-                                        "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items/anyOf/0",
-                                        "type": "object",
-                                        "title": "The first anyOf schema",
-                                        "description": "An explanation about the purpose of this instance.",
-                                        "default": {},
-                                        "examples": [
-                                            {
-                                                "LOG_CLASS_SIGNAL_OBJECT": {
-                                                    "signalId": "123456",
-                                                    "signalValue": [
-                                                        1,
-                                                        1,
-                                                        0,
-                                                        0,
-                                                        0
-                                                    ]
-                                                }
-                                            }
-                                        ],
-                                        "required": [
-                                            "LOG_CLASS_SIGNAL_OBJECT"
-                                        ],
-                                        "properties": {
-                                            "LOG_CLASS_SIGNAL_OBJECT": {
-                                                "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items/anyOf/0/properties/LOG_CLASS_SIGNAL_OBJECT",
-                                                "type": "object",
-                                                "title": "The LOG_CLASS_SIGNAL_OBJECT schema",
-                                                "description": "An explanation about the purpose of this instance.",
-                                                "default": {},
-                                                "examples": [
-                                                    {
-                                                        "signalId": "123456",
-                                                        "signalValue": [
-                                                            1,
-                                                            1,
-                                                            0,
-                                                            0,
-                                                            0
-                                                        ]
-                                                    }
-                                                ],
-                                                "required": [
-                                                    "signalId",
-                                                    "signalValue"
-                                                ],
-                                                "properties": {
-                                                    "signalId": {
-                                                        "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items/anyOf/0/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalId",
-                                                        "type": "string",
-                                                        "title": "The signalId schema",
-                                                        "description": "An explanation about the purpose of this instance.",
-                                                        "default": "",
-                                                        "examples": [
-                                                            "123456"
-                                                        ]
-                                                    },
-                                                    "signalValue": {
-                                                        "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items/anyOf/0/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalValue",
-                                                        "type": "array",
-                                                        "title": "The signalValue schema",
-                                                        "description": "An explanation about the purpose of this instance.",
-                                                        "default": [],
-                                                        "examples": [
-                                                            [
-                                                                1,
-                                                                1
-                                                            ]
-                                                        ],
-                                                        "additionalItems": true,
-                                                        "items": {
-                                                            "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items/anyOf/0/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalValue/items",
-                                                            "anyOf": [
-                                                                {
-                                                                    "$id": "#/properties/REAL_TIME_EVENT/properties/LOG_CLASS/properties/signalList/items/anyOf/0/properties/LOG_CLASS_SIGNAL_OBJECT/properties/signalValue/items/anyOf/0",
-                                                                    "type": "integer",
-                                                                    "title": "The first anyOf schema",
-                                                                    "description": "An explanation about the purpose of this instance.",
-                                                                    "default": 0,
-                                                                    "examples": [
-                                                                        1,
-                                                                        0
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    }
-                                                },
-                                                "additionalProperties": true
-                                            }
-                                        },
-                                        "additionalProperties": true
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "additionalProperties": true
+                    "title": "Recovery Timestamp",
+                    "type": "integer"
                 }
             },
-            "additionalProperties": true
+            "additionalProperties": false
         }
     },
-    "additionalProperties": true
+    "additionalProperties": false
 }
